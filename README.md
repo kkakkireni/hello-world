@@ -2,3 +2,5 @@
 Just another repository
 
 Learning how to use Github
+
+Github is fun fun fun
