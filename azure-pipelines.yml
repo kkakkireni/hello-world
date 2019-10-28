@@ -3,30 +3,22 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
 trigger:
 - master
 
-strategy:
-  matrix:
-    jdk10_linux:
-      imageName: "ubuntu-16.04"
-      jdk_version: "1.10"
-    jdk11_windows:
-      imageName: "vs2017-win2016"
-      jdk_version: "1.11"
-  maxParallel: 2
-
 pool:
-  vmImage: $(imageName)
+  vmImage: 'ubuntu-latest'
 
 steps:
-  - task: Maven@3
-    inputs:
-      mavenPomFile: "pom.xml"
-      mavenOptions: "-Xmx3072m"
-      javaHomeOption: "JDKVersion"
-      jdkVersionOption: $(jdk_version)
-      jdkArchitectureOption: "x64"
-      publishJUnitResults: true
-      testResultsFiles: "**/TEST-*.xml"
-      goals: "package"
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
