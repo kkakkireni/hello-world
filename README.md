@@ -7,10 +7,6 @@ Learning how to use Github
 
 Github is fun fun fun
 
-lll
-
-pulled
-
 Another online change
 
 Another test run
